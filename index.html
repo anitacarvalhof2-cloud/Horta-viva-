@@ -76,7 +76,7 @@ authForm.onsubmit=e=>{e.preventDefault();const email=document.getElementById('au
 function enterApp(){const user=JSON.parse(localStorage.getItem('hortaCurrentUser'));if(user){authModal.classList.add('hidden');document.body.classList.remove('locked');document.getElementById('accountName').textContent=user.name+' · '+(user.profile==='escolar'?'Escola':'Individual')}}
 const current=JSON.parse(localStorage.getItem('hortaCurrentUser'));if(current)enterApp();
 const menu=document.getElementById('menu'),links=document.getElementById('links');menu.onclick=()=>links.classList.toggle('open');links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
-document.querySelectorAll('.filter').forEach(b=>{if(b.dataset.f)b.onclick=()=>{document.querySelectorAll('.filter[data-f]').forEach(x=>x.classList.remove('active'));b.classList.add('active') ;document.querySelectorAll('[data-c]').forEach(c=>c.style.display =b.dataset.f==='Todas'||c.dataset.c===b.dataset.f?'':'none')});});
+document.querySelectorAll('.filter').forEach(b=>{if(b.dataset.f)b.onclick=()=>{document.querySelectorAll('.filter[data-f]').forEach(x=>x.classList.remove('active'));b.classList.add('active') ;document.querySelectorAll('[data-c]').forEach(c=>c.style.display =b.dataset.f==='Todas'||c.dataset.c===b.dataset.f?'':'none')});}); 
 let view=new Date();
 view.setDate(1);
 
